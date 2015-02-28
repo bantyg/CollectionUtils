@@ -7,7 +7,7 @@ public class CollectionsTest{
 	@Test
 	public void map_will_perform_given_operation_for_each_element_n_the_list(){
 		List<Integer> l1 = new ArrayList<Integer>();
-		ListMapper lm = new ListMapper();
+		ListMapper lm = new MMapper();
 		l1.add(2);
 		l1.add(12);
 		l1.add(4);
@@ -23,7 +23,7 @@ public class CollectionsTest{
 
 	@Test
 	public void map_returns_an_Integer_List_after_addint_five_to_ech_ele_of_given_list(){
-		ListMapper listMapper = new ListMapper();
+		ListMapper listMapper = new MMapper();
 		List<Integer> numbers = new ArrayList<Integer>();
 		List<Integer> expected = new ArrayList<Integer>();
 		numbers.add(1);
@@ -40,7 +40,7 @@ public class CollectionsTest{
 	@Test
 	public void filter_will_perform_given_operation_for_each_element_n_the_list(){
 		List<Integer> l1 = new ArrayList<Integer>();
-		FilterMapper fm = new FilterMapper();
+		FilterMapper fm = new FMapper();
 		l1.add(2);
 		l1.add(12);
 		l1.add(4);
@@ -51,7 +51,7 @@ public class CollectionsTest{
 
 	@Test
 	public void filter_returns_an_Integer_List_after_checking_even_or_odd_on_the_given_list(){
-		FilterMapper filterMapper = new FilterMapper();
+		FilterMapper filterMapper = new FMapper();
 		List<Integer> numbers = new ArrayList<Integer>();
 		numbers.add(1);
 		numbers.add(2);

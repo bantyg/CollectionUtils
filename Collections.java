@@ -1,11 +1,19 @@
 import java.util.*;
-class ListMapper{
+interface ListMapper{
+	public int addFive(int number);
+}
+
+interface FilterMapper{
+	public boolean isEven(int number);
+}
+
+class MMapper implements ListMapper{
 	public int addFive(int number){
 		return number+5;
 	}
 }
 
-class FilterMapper{
+class FMapper implements FilterMapper{
 	public boolean isEven(int number){
 		return number%2==0;
 	}
@@ -14,6 +22,7 @@ class FilterMapper{
 public class Collections{
 
 	public static List<Integer> map(List<Integer> list, ListMapper listMapper){
+		listMapper = new MMapper();
 		List<Integer> result = new ArrayList<Integer>();
 		for(int element: list){
 			result.add(listMapper.addFive(element));
@@ -22,6 +31,7 @@ public class Collections{
 	}
 
 	public static List<Integer> filter(List<Integer> list, FilterMapper fm){
+		fm = new FMapper();
 		List<Integer> result = new ArrayList<Integer>();
 		for(int element: list){
 			if(fm.isEven(element) == true){
@@ -32,7 +42,7 @@ public class Collections{
 	}
 
 	public static void main(String[] args) {
-		FilterMapper fm = new FilterMapper();
+		FilterMapper fm = new FMapper();
 		List<Integer> numbers = new ArrayList<Integer>();
 		numbers.add(2);
 		numbers.add(3);
